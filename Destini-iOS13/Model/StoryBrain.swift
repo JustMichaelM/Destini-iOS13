@@ -9,3 +9,19 @@
 import Foundation
 
 
+struct StoryBrain {
+    private let stories: [Story]
+    private(set) var currentStoryIndex: Int = 0
+    
+    init(stories: [Story]) {
+        self.stories = stories
+    }
+    
+    var currentStory: Story {
+        stories[currentStoryIndex]
+    }
+    
+    mutating func advanceToNextStory() {
+        currentStoryIndex += 1
+    }
+}

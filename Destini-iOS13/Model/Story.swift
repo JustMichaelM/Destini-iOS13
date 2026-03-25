@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import UIKit
+
+struct Story {
+    let text: String
+    let image: UIImage
+    let choice1: String
+    let choice2: String
+    
+    init(text: String, image: UIImage? = nil, choice1: String, choice2: String) {
+        self.text = text
+        self.image = image ?? UIImage(named: "background")!
+        self.choice1 = choice1
+        self.choice2 = choice2
+    }
+}
