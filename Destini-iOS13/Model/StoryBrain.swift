@@ -16,20 +16,19 @@ struct StoryBrain {
     init(stories: [Story]) {
         self.stories = stories
     }
+    private var lastStoryIndex: Int {
+        stories.count - 1
+    }
+    
+    var isLastStory: Bool {
+        currentStoryIndex == lastStoryIndex
+    }
     
     var currentStory: Story {
         stories[currentStoryIndex]
     }
-    var isCompleted: Bool {
-        if currentStoryIndex + 1 == stories.count {
-            return true
-        }
-        return false
-    }
     
     mutating func advanceToNextStory(choice: String) {
-        if currentStoryIndex + 1 < stories.count{
-            currentStoryIndex += 1
-        }
+        currentStoryIndex = min(currentStoryIndex + 1, lastStoryIndex)
     }
 }

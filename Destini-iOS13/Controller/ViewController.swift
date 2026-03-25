@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         updateUi()
     }
     @IBAction func choicePicked(_ sender: UIButton) {
-        if storyBrain.isCompleted {
+        if storyBrain.isLastStory{
             endStory()
             return 
         }
