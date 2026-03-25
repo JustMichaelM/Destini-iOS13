@@ -20,8 +20,16 @@ struct StoryBrain {
     var currentStory: Story {
         stories[currentStoryIndex]
     }
+    var isCompleted: Bool {
+        if currentStoryIndex + 1 == stories.count {
+            return true
+        }
+        return false
+    }
     
-    mutating func advanceToNextStory() {
-        currentStoryIndex += 1
+    mutating func advanceToNextStory(choice: String) {
+        if currentStoryIndex + 1 < stories.count{
+            currentStoryIndex += 1
+        }
     }
 }

@@ -10,7 +10,22 @@ import UIKit
 
 enum StoryData {
     private static let stories: [Story] = [
-        Story(text: "Blabla", image: UIImage(named: "background"),choice1: "A", choice2: "B")
+        Story(
+            text: "Budzi Cię dźwięk budzika. Co robisz?",
+            image: UIImage(named: "background"),
+            choice1: "Wstaję",
+            choice2: "Drzemka"
+        ),
+        Story(
+            text: "Idziesz do kuchni i widzisz śniadanie. Co wybierasz?",
+            choice1: "Jajka",
+            choice2: "Płatki"
+        ),
+        Story(
+            text: "Spotykasz przyjaciela na ulicy. Co mówisz?",
+            choice1: "Cześć!",
+            choice2: "Ignoruję go"
+        )
     ]
     
     static var allStories: [Story] {
